@@ -6,7 +6,7 @@ import jsonwebtoken from "jsonwebtoken";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const checkout = ({ setSideCart }) => {
+const Account = ({ setSideCart }) => {
   const [name, setName] = useState("");
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
@@ -15,7 +15,6 @@ const checkout = ({ setSideCart }) => {
   const [state, setState] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  // const [disable, setDisable] = useState(true)
   const disable = true;
   const router = useRouter();
 
@@ -140,7 +139,6 @@ const checkout = ({ setSideCart }) => {
 
   const handleDetails = async (e) => {
     e.preventDefault();
-    // 'phone': req.body.phone, 'name': req.body.name, 'address': req.body.address, pin: req.body.pincode
     let body = {
       email: email,
       name: name,
@@ -340,4 +338,4 @@ const checkout = ({ setSideCart }) => {
   );
 };
 
-export default checkout;
+export default Account;
