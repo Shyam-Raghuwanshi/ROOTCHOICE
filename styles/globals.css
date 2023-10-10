@@ -2,10 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    overflow-x: hidden
+body {
+  overflow-x: hidden;
+  background-color: rgb(17 24 39);
+  color: white;
 }
 
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+
+  /* scrollbar-width: thin; */
+  /* scrollbar-color: #888 #f1f1f1; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(17 24 39);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+  background: #fffdfd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Width of the scrollbar
+scrollbar-width: thin;
+scrollbar-color: #888 #f1f1f1;
+
+/* Handle on hover */
+/* scrollbar-color: #555 #f1f1f1; */
+
+/* Standard properties */
+/* scrollbar-width: thin; */
+/* scrollbar-color: #888 #f1f1f1; */
+
+/* Handle on hover */
+/* scrollbar-color: #555 #f1f1f1; */
 
 /* li>ul                 { transform: translatex(100%) scale(0) }
 li:hover>ul           { transform: translatex(101%) scale(1) }
