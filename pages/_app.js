@@ -7,9 +7,6 @@ import LoadingBar from 'react-top-loading-bar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jsonwebtoken from 'jsonwebtoken'
-// import Seller from '../models/Seller'
-// import connectDb from '../middleware/mongoose'
-
 
 function MyApp({ Component, pageProps }) {
   const [sideCart, setSideCart] = useState(false)
@@ -19,7 +16,6 @@ function MyApp({ Component, pageProps }) {
   const [slug, setSlug] = useState()
   const [user, setUser] = useState({ value: null })
   const [key, setKey] = useState()
-  // const [token, setToken] = useState(null)
   const [useremail, setUseremail] = useState(null)
   const router = useRouter()
 
@@ -34,11 +30,6 @@ function MyApp({ Component, pageProps }) {
     let token = localStorage.getItem("token")
     if (token) {
       let user = jsonwebtoken.verify(token, process.env.NEXT_PUBLIC_SECRET_KEY)
-      // const expiry = (JSON.parse(atob(token.split('.')[1]))).exp;
-      // if (Math.floor((new Date).getTime() / 1000) >= expiry) {
-      //   logout()
-      //   localStorage.removeItem('token')
-      // }
       if (token) {
         let body = { email: user.email }
         const fetchCart = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/fetchcart`, {
