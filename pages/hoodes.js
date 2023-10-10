@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import Product from '../models/Product'
 import connectDb from '../middleware/mongoose'
 import Head from 'next/head';
-const hoodes = ({ hoodes, setSideCart }) => {
+const Hoodes = ({ hoodes, setSideCart }) => {
   useEffect(() => {
     setSideCart(false)
   }, [])
@@ -87,4 +87,4 @@ export async function getServerSideProps(context) {
     props: { hoodes: JSON.parse(JSON.stringify(hoodes)) }
   }
 }
-export default hoodes;
+export default Hoodes;

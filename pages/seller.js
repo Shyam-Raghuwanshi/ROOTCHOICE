@@ -4,7 +4,7 @@ import Link from "next/link"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
-function seller() {
+function Seller() {
     const [user, setUser] = useState(null)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -181,12 +181,4 @@ function seller() {
     )
 }
 
-export default seller
-
-// export async function getServerSideProps(context) {
-
-   
-//     return {
-//         props: { userVerify: JSON.parse(JSON.stringify(userVerify)) }
-//     }
-// }
+export default Seller

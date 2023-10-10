@@ -3,9 +3,8 @@ import React, {useEffect} from 'react'
 import Product from '../models/Product'
 import connectDb from '../middleware/mongoose'
 import Head from 'next/head'
-const stickers = ({ stickers , setSideCart, findMode}) => {
+const Stickers = ({ stickers , setSideCart}) => {
   useEffect(() => {
-    // findMode()
     setSideCart(false)
   }, [])
   return (

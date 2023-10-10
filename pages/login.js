@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head';
-const login = ({ setSideCart }) => {
+const Login = ({ setSideCart }) => {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -126,4 +126,4 @@ const login = ({ setSideCart }) => {
     </>
   )
 }
-export default login
+export default Login

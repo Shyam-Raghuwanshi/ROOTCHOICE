@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
-const checkout = ({ cart, removeOneItem, removeFullItem, addToCart, clearCart, setSideCart, subtotal }) => {
+const Checkout = ({ cart, removeOneItem, removeFullItem, addToCart, clearCart, setSideCart, subtotal }) => {
   const [user, setUser] = useState(null)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -381,4 +381,4 @@ const checkout = ({ cart, removeOneItem, removeFullItem, addToCart, clearCart, s
 }
 
 
-export default checkout
+export default Checkout

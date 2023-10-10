@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head'
-const signup = ({ setSideCart }) => {
+const Signup = ({ setSideCart }) => {
   const router = useRouter()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -125,4 +125,4 @@ const signup = ({ setSideCart }) => {
 
 }
 
-export default signup
+export default Signup

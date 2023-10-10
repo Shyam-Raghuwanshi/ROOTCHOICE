@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import jsonwebtoken from 'jsonwebtoken'
 import Link from 'next/link'
-const buynow = ({ product, setSideCart }) => {
+const Buynow = ({ product, setSideCart }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [pincode, setPincode] = useState('')
@@ -479,7 +479,7 @@ const buynow = ({ product, setSideCart }) => {
     </>
   )
 }
-export default buynow
+export default Buynow
 
 
 export async function getServerSideProps(context) {
@@ -489,6 +489,3 @@ export async function getServerSideProps(context) {
     props: { product: JSON.parse(JSON.stringify(product)) }
   }
 }
-
-
-

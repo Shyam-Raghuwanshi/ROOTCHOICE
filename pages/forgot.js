@@ -1,10 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect } from 'react'
-const htmlForgot = ({ findMode }) => {
-    useEffect(() => {
-        // findMode()
-    }, [])
-
+const Forgot = () => {
     return (
         <>
             <Head>
@@ -61,4 +56,4 @@ const htmlForgot = ({ findMode }) => {
     )
 }
 
-export default htmlForgot
+export default Forgot

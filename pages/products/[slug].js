@@ -8,7 +8,7 @@ import jsonwebtoken from 'jsonwebtoken'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
-const slug = ({ addToCart, product, varients, error }) => {
+const Slug = ({ addToCart, product, varients, error }) => {
   const router = useRouter()
   const { slug } = router.query;
   const [pin, setPin] = useState('')
@@ -181,4 +181,4 @@ export async function getServerSideProps(context) {
     props: { product: JSON.parse(JSON.stringify(product)), varients: JSON.parse(JSON.stringify(colorSizeSlug)) }
   }
 }
-export default slug
+export default Slug

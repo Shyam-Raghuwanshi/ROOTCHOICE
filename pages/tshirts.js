@@ -4,7 +4,7 @@ import Product from '../models/Product'
 import connectDb from '../middleware/mongoose'
 import Head from 'next/head'
 
-const tshirts = ({ tshirts, setSideCart }) => {
+const Tshirts = ({ tshirts, setSideCart }) => {
   useEffect(() => {
     setSideCart(false)
   }, [])
@@ -102,4 +102,4 @@ export async function getServerSideProps(context) {
     props: { tshirts: JSON.parse(JSON.stringify(tshirts)) }
   }
 }
-export default tshirts;
+export default Tshirts;
