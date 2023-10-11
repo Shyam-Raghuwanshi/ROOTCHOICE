@@ -56,7 +56,7 @@ const Navbar = ({
     pagessidebarRef.current.classList.toggle("-translate-x-full");
   };
 
-  // cart toggle 
+  // cart toggle
   const handleCart = () => {
     cartRef.current.classList.toggle("translate-x-full");
   };
@@ -104,6 +104,11 @@ const Navbar = ({
             <Link href={"/about"}>
               <a className="mr-5 hover:text-white font-bold cursor-pointer">
                 About us
+              </a>
+            </Link>
+            <Link href={"/contact"}>
+              <a className="mr-5 hover:text-white font-bold cursor-pointer">
+                Contact
               </a>
             </Link>
           </nav>
@@ -196,7 +201,6 @@ const Navbar = ({
             className="transition-all ease-in-out-quart duration-500 text-white absolute top-7 mt-5 mr-10 text-xl cursor-pointer right-2"
           />
         </div>
-        
       </div>
 
       {/* ///////////////////////////////////////// */}
