@@ -36,13 +36,10 @@ export default function PagesSidebar({
       <aside>
         <div
           ref={ref}
-          id="pages-sidebar"
           className="fixed top-0 left-0 z-[100] h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-900"
           tabIndex="-1"
-          aria-labelledby="pages-sidebar-label"
         >
           <h5
-            id="pages-sidebar-label"
             className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
           >
             Menu
@@ -50,8 +47,7 @@ export default function PagesSidebar({
           <button
             onClick={handlePagesSidebar}
             type="button"
-            data-drawer-hide="pages-sidebar"
-            aria-controls="pages-sidebar"
+            
             className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
           >
             <svg
@@ -195,7 +191,7 @@ export default function PagesSidebar({
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <BsFillBagCheckFill />
-                    <span class="flex-1 ml-3 whitespace-nowrap">
+                    <span className="flex-1 ml-3 whitespace-nowrap">
                       Your Orders
                     </span>
                   </div>

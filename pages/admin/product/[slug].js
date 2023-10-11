@@ -217,7 +217,7 @@ const Slug = ({ productval }) => {
             {/* {noOfProducts.map(() => { */}
             <BaseCard title="Update Product Detials">
               <Stack spacing={3}>
-                <label htmlFor="Title">Title</label>
+                <label htmlhtmlFor="Title">Title</label>
                 <TextField
                   onChange={handelChange}
                   id="name-basic"
@@ -226,7 +226,7 @@ const Slug = ({ productval }) => {
                   placeholder="Enter product title"
                   value={title}
                 />
-                <label htmlFor="Description">Description</label>
+                <label htmlhtmlFor="Description">Description</label>
                 <TextField
                   onChange={handelChange}
                   id="email-basic"
@@ -235,7 +235,7 @@ const Slug = ({ productval }) => {
                   placeholder="How type of product"
                   value={desc}
                 />
-                <label htmlFor="Quantity">Quantity</label>
+                <label htmlhtmlFor="Quantity">Quantity</label>
                 <TextField
                   onChange={handelChange}
                   id="er-basic"
@@ -244,7 +244,7 @@ const Slug = ({ productval }) => {
                   placeholder="Enter product Quantity"
                   value={availableQty}
                 />
-                <label htmlFor="Price">Price</label>
+                <label htmlhtmlFor="Price">Price</label>
                 <TextField
                   onChange={handelChange}
                   id="er-basic2"
@@ -393,7 +393,7 @@ const Slug = ({ productval }) => {
                     />
                   </RadioGroup>
                 </FormControl>
-                <label htmlFor="Image">Image</label>
+                <label htmlhtmlFor="Image">Image</label>
                 <div className="">
                   <span>
                     Product Image. If you should change the image please choose

@@ -156,19 +156,19 @@ function Seller() {
                 <div className="lg:w-[47%] md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
                     <h2 className="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
                     <div className="relative mb-4">
-                        <label htmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
+                        <label htmlhtmlFor="name" className="leading-7 text-sm text-gray-600">Name</label>
                         <input onChange={handelChange} type="text" value={name} id="name" name="name" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div className="relative mb-4">
-                        <label htmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
+                        <label htmlhtmlFor="email" className="leading-7 text-sm text-gray-600">Email</label>
                         <input readOnly type="email" value={email} id="email" name="email" className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div className="relative mb-4">
-                        <label htmlFor="phone" className="leading-7 text-sm text-gray-600">Phone</label>
+                        <label htmlhtmlFor="phone" className="leading-7 text-sm text-gray-600">Phone</label>
                         <input onChange={handelChange} type="phone" id="phone" name="phone" value={phone} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div className="relative mb-4">
-                        <label htmlFor="Address" className="leading-7 text-sm text-gray-600">Address</label>
+                        <label htmlhtmlFor="Address" className="leading-7 text-sm text-gray-600">Address</label>
                         <input onChange={handelChange} type="Address" id="Address" name="address" value={address} className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div className='flex justify-between'>

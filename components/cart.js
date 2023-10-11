@@ -23,13 +23,11 @@ export default function Cart({
       <aside>
         <div
           ref={ref}
-          id="pages-sidebar"
           className="fixed top-0 right-0 z-[100] h-screen p-4 overflow-x-auto overflow-x-hidden transition-transform translate-x-full bg-white w-96 dark:bg-gray-900"
           tabIndex="-1"
-          aria-labelledby="pages-sidebar-label"
         >
           <h5
-            id="pages-sidebar-label"
+            
             className="text-base font-semibold text-gray-500 dark:text-gray-400"
           >
             Your Cart
@@ -37,8 +35,6 @@ export default function Cart({
           <button
             onClick={handleCart}
             type="button"
-            data-drawer-hide="pages-sidebar"
-            aria-controls="pages-sidebar"
             className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
           >
             <svg

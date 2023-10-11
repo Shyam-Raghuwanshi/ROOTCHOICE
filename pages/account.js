@@ -191,7 +191,7 @@ const Account = ({ setSideCart }) => {
                 <div className="space-x-0 lg:flex lg:space-x-4">
                   <div className="w-full">
                     <label
-                      htmlFor="firstName"
+                      htmlhtmlFor="firstName"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       Name
@@ -210,7 +210,7 @@ const Account = ({ setSideCart }) => {
                 <div className="space-x-0 lg:flex lg:space-x-4 mt-5">
                   <div className="w-full lg:w-1/2">
                     <label
-                      htmlFor="city"
+                      htmlhtmlFor="city"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       City
@@ -230,7 +230,7 @@ const Account = ({ setSideCart }) => {
                   </div>
                   <div className="w-full lg:w-1/2">
                     <label
-                      htmlFor="phone"
+                      htmlhtmlFor="phone"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       Phone
@@ -249,7 +249,7 @@ const Account = ({ setSideCart }) => {
                 <div className="mt-4">
                   <div className="w-full">
                     <label
-                      htmlFor="Address"
+                      htmlhtmlFor="Address"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       Address
@@ -269,7 +269,7 @@ const Account = ({ setSideCart }) => {
                 <div className="space-x-0 lg:flex lg:space-x-4">
                   <div className="w-full  ">
                     <label
-                      htmlFor="postcode"
+                      htmlhtmlFor="postcode"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       PinCode
@@ -288,7 +288,7 @@ const Account = ({ setSideCart }) => {
                 <div className="space-x-0 lg:flex lg:space-x-4 mt-5">
                   <div className="w-full lg:w-1/2">
                     <label
-                      htmlFor="city"
+                      htmlhtmlFor="city"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       City
@@ -304,7 +304,7 @@ const Account = ({ setSideCart }) => {
                   </div>
                   <div className="w-full lg:w-1/2 ">
                     <label
-                      htmlFor="city"
+                      htmlhtmlFor="city"
                       className="block mb-3 text-sm font-semibold text-gray-500"
                     >
                       State

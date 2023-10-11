@@ -15,7 +15,7 @@ const Forgot = () => {
                             <div className="w-full pl-16 lg:w-1/2 bg-gray-900 text-white p-5 rounded-lg lg:rounded-l-none">
                                 <htmlform className="px-8 pt-6 pb-8 mb-4  rounded">
                                     <div className="mb-4">
-                                        <label className="block mb-2 text-lg font-bold text-gray-300" htmlFor="email">
+                                        <label className="block mb-2 text-lg font-bold text-gray-300" htmlhtmlFor="email">
                                             Email
                                         </label>
                                         <input

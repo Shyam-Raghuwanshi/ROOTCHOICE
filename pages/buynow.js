@@ -369,28 +369,28 @@ const Buynow = ({ product, setSideCart }) => {
               <div className="">
                 <div className="space-x-0 lg:flex lg:space-x-4">
                   <div className="w-full">
-                    <label htmlFor="firstName" className="block mb-3 text-sm font-semibold text-gray-500">Name</label>
+                    <label htmlhtmlFor="firstName" className="block mb-3 text-sm font-semibold text-gray-500">Name</label>
                     <input onChange={handelChange} readOnly={user != null} value={name} name="name" type="text" placeholder="Name"
                       className="w-full px-4 py-3 text-sm border  bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" required />
                   </div>
                 </div>
                 <div className="space-x-0 lg:flex lg:space-x-4 mt-5">
                   <div className="w-full lg:w-1/2">
-                    <label htmlFor="city"
+                    <label htmlhtmlFor="city"
                       className="block mb-3 text-sm font-semibold text-gray-500">Email</label>
                     <input onChange={handelChange} readOnly={user != null} value={email} name="email" type="text" placeholder="Email"
                       className="w-full px-4 py-3 text-sm border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" required />
                     <span className="block mb-1 text-sm font-semibold text-gray-500">Email cann't be editable</span>
                   </div>
                   <div className="w-full lg:w-1/2">
-                    <label htmlFor="phone" className="block mb-3 text-sm font-semibold text-gray-500">Phone</label>
+                    <label htmlhtmlFor="phone" className="block mb-3 text-sm font-semibold text-gray-500">Phone</label>
                     <input onChange={handelChange} readOnly={user != null} value={phone} name="phone" type="text" placeholder="Phone"
                       className="w-full px-4 py-3 text-sm border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" required />
                   </div>
                 </div>
                 <div className="mt-4">
                   <div className="w-full">
-                    <label htmlFor="Address"
+                    <label htmlhtmlFor="Address"
                       className="block mb-3 text-sm font-semibold text-gray-500">Address</label>
                     <textarea onChange={handelChange} readOnly={user != null} value={address}
                       className="w-full px-4 py-3 text-xs border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600"
@@ -400,7 +400,7 @@ const Buynow = ({ product, setSideCart }) => {
                 <div className="space-x-0 lg:flex lg:space-x-4">
 
                   <div className="w-full lg:w-1/2 ">
-                    <label htmlFor="postcode" className="block mb-3 text-sm font-semibold text-gray-500">
+                    <label htmlhtmlFor="postcode" className="block mb-3 text-sm font-semibold text-gray-500">
                       PinCode</label>
                     <input onChange={handelChange} readOnly={user != null} required value={pincode} name="pincode" type="text" placeholder="Enter your PinCode"
                       className="w-full px-4 py-3 text-sm border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" />
@@ -423,14 +423,14 @@ const Buynow = ({ product, setSideCart }) => {
                 </div>
                 <div className="space-x-0 lg:flex lg:space-x-4 mt-5">
                   <div className="w-full lg:w-1/2">
-                    <label htmlFor="city"
+                    <label htmlhtmlFor="city"
                       className="block mb-3 text-sm font-semibold text-gray-500">City</label>
                     <input onChange={handelChange} value={city} name="city" type="text" placeholder="City"
                       className="w-full px-4 py-3 text-sm border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" />
                   </div>
                   <div className="w-full lg:w-1/2 ">
 
-                    <label htmlFor="city" className="block mb-3 text-sm font-semibold text-gray-500">State</label>
+                    <label htmlhtmlFor="city" className="block mb-3 text-sm font-semibold text-gray-500">State</label>
                     <input onChange={handelChange} value={state} name="state" type="text" placeholder="State"
                       className="w-full px-4 py-3 text-sm border bg-gray-900 border-gray-500 rounded lg:text-sm focus:outline-none focus:ring-1 focus:ring-blue-600" />
                   </div>
