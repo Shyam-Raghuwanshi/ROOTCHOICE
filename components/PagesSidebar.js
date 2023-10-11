@@ -239,6 +239,16 @@ export default function PagesSidebar({
                   </div>
                 </li>
               </Link>
+              <Link href={"/contact"}>
+                <li>
+                  <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <HiInformationCircle />
+                    <span className="flex-1 ml-3 whitespace-nowrap">
+                      Contact Us
+                    </span>
+                  </div>
+                </li>
+              </Link>
             </ul>
           </div>
         </div>
