@@ -4,7 +4,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { GiShoppingCart } from "react-icons/gi";
 import { GoEyeClosed } from "react-icons/go";
 import { BsBagPlusFill } from "react-icons/bs";
+import { CiMenuFries } from "react-icons/ci";
 import { FaMinusCircle, FaPlusCircle, FaUserCircle } from "react-icons/fa";
+import PagesSidebar from "./PagesSidebar";
+import Cart from "./cart";
 const Navbar = ({
   cart,
   clearCart,
@@ -17,6 +20,10 @@ const Navbar = ({
 }) => {
   const [dropdown, setDropdown] = useState(false);
   const [cartIcon, setCartIcon] = useState(true);
+  const [cartRef, setCartRef] = useState(null);
+  const [pagessidebarRef, setPagessidebarRef] = useState(null);
+  const ref = useRef();
+
   const router = useRouter();
   const onmouseover = () => {
     setDropdown(true);
@@ -44,7 +51,15 @@ const Navbar = ({
     }
   }, [router.query]);
 
-  const ref = useRef();
+  // Pages Sidebar togggle function
+  const handlePagesSidebar = () => {
+    pagessidebarRef.current.classList.toggle("-translate-x-full");
+  };
+
+  // cart toggle 
+  const handleCart = () => {
+    cartRef.current.classList.toggle("translate-x-full");
+  };
 
   return (
     <>
@@ -53,14 +68,14 @@ const Navbar = ({
           !sideCart && "overflow-hidden"
         }   border-b-2 border-slate-700 shadow-gray-900 shadow-md`}
       >
-        <div className="md:w-full container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <div className="md:w-full container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
+          <a className="flex title-font font-medium items-center text-white ">
             <img className="h-14 invert" src="/logo.png" alt="Logo" />
             <Link href={"/"}>
               <span className="text-xl cursor-pointer">ROOTCHOICE</span>
             </Link>
           </a>
-          <nav className="flex-col md:flex-row md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center">
+          <nav className="hidden flex-col md:flex-row md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 lg:flex flex-wrap items-center text-base justify-center ">
             <Link href={"/"}>
               <a className="mr-5 hover:text-white font-bold cursor-pointer">
                 Home
@@ -92,9 +107,7 @@ const Navbar = ({
               </a>
             </Link>
           </nav>
-          {/* <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center"> */}
 
-          {/* top-16 right-40 */}
           <div className="flex items-center z-50">
             {dropdown && (
               <div
@@ -138,7 +151,7 @@ const Navbar = ({
               </a>
             ) : (
               <Link href={"/login"}>
-                <button className="flex ml-auto mr-3 bg-transparent text-xl font-extrabold underline  hover:text-white border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">
+                <button className="hidden lg:flex ml-auto mr-3 bg-transparent text-xl font-extrabold underline  hover:text-white border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">
                   Login
                 </button>
               </Link>
@@ -146,15 +159,24 @@ const Navbar = ({
             {cartIcon && (
               <GiShoppingCart
                 onClick={() => {
-                  toggleCart();
+                  // toggleCart();
+                  handleCart();
                 }}
-                className=" text-3xl hover:text-white cursor-pointer"
+                className="hidden lg:flex text-3xl hover:text-white cursor-pointer"
               />
             )}
+            <span className="lg:hidden">
+              <CiMenuFries
+                id="hamburgerIcon"
+                className="ml-5 text-2xl"
+                onClick={handlePagesSidebar}
+              />
+            </span>
           </div>
         </div>
         <div></div>
       </header>
+
       <div
         ref={ref}
         className={`pb-20 z-50 ${
@@ -174,106 +196,16 @@ const Navbar = ({
             className="transition-all ease-in-out-quart duration-500 text-white absolute top-7 mt-5 mr-10 text-xl cursor-pointer right-2"
           />
         </div>
-        <div className="mt-10 px-5 ">
-          {cart == null && (
-            <h1 className="text-2xl font-bold">
-              Please login for preview your cart.
-            </h1>
-          )}
-          <ol className="list-decimal font-thin  text-white">
-            {cart !== undefined && cart !== null && cart.length == 0 && (
-              <div className="w-full flex text-center justify-center text-xl font-semibold">
-                Cart is empty. Please add some items.
-              </div>
-            )}
-            {cart !== undefined &&
-              cart !== null &&
-              cart.map((k) => {
-                return (
-                  <li
-                    key={k.slug}
-                    className="mt-5 border-b-2 h-auto pb-4 border-slate-500 "
-                  >
-                    <div className="flex flex-row">
-                      <div className="ml-2 w-44 font-serif">
-                        {k.name} ({k.size}/{k.varient})
-                      </div>
-                      <div className="flex items-center justify-center text-lg">
-                        <FaMinusCircle
-                          onClick={() => {
-                            removeOneItem(
-                              k.slug,
-                              k.title,
-                              k.price,
-                              k.name,
-                              k.size,
-                              k.varient
-                            );
-                          }}
-                          className="ml-20 cursor-pointer"
-                        />
-                        <span className="pl-3 pr-3">{k.quantity}</span>
-                        <FaPlusCircle
-                          onClick={() => {
-                            addToCart(
-                              k.email,
-                              k.slug,
-                              k.title,
-                              k.price,
-                              k.name,
-                              k.size,
-                              k.varient,
-                              k.img
-                            );
-                          }}
-                          className="cursor-pointer"
-                        />
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-          </ol>
-        </div>
-        <div className="flex w-full  justify-center absolute bottom-2 pt-4">
-          {cart !== undefined &&
-          user.value != null &&
-          cart !== null &&
-          cart.length == 0 ? (
-            <button className=" disabled flex mr-2 text-slate-600 bg-slate-800 border-2 border-slate-700  py-2 px-2 active:bg-slate-700  rounded-lg text-lg">
-              <BsBagPlusFill className="mr-2 mt-1" />
-              Checkout
-            </button>
-          ) : (
-            <Link href={"/checkout"}>
-              <button className=" flex mr-2 text-white bg-slate-600 border-2 border-slate-400  py-2 px-2 active:bg-slate-700  rounded-lg text-lg">
-                <BsBagPlusFill className="mr-2 mt-1" />
-                Checkout
-              </button>
-            </Link>
-          )}
-
-          {cart !== undefined &&
-          user.value != null &&
-          cart !== null &&
-          cart.length == 0 ? (
-            <button
-              disabled
-              onClick={clearCart}
-              className="flex ml-2 text-slate-600 bg-slate-800 border-2 border-slate-700  py-2 px-2  rounded-lg text-lg"
-            >
-              Clear Cart
-            </button>
-          ) : (
-            <button
-              onClick={clearCart}
-              className="flex ml-2 text-white bg-slate-600 border-2 border-slate-400  py-2 px-2 active:bg-slate-700  rounded-lg text-lg"
-            >
-              Clear Cart
-            </button>
-          )}
-        </div>
+        
       </div>
+
+      {/* ///////////////////////////////////////// */}
+      <PagesSidebar
+        handlePagesSidebar={handlePagesSidebar}
+        setPagessidebarRef={setPagessidebarRef}
+      />
+
+      <Cart handleCart={handleCart} setCartRef={setCartRef} />
     </>
   );
 };

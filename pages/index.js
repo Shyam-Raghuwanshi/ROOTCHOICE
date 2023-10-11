@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ImageScrollBar from "../components/ImageScrollbar";
+import PagesSidebar from "../components/PagesSidebar";
 
 export default function Home({ setSideCart }) {
   const router = useRouter();
@@ -24,18 +25,18 @@ export default function Home({ setSideCart }) {
   const showHTML = () => {
     return (
       <div className="p-8">
-        <h1 className="text-white text-[8rem] font-semibold mix-blend-exclusion underline">
+        <h1 className="text-white text-[2.6rem] sm:text-6xl  md:text-7xl lg:text-8xl xl:text-9xl font-semibold mix-blend-exclusion underline">
           ROOTCHOICE...
         </h1>
-        <h4 className="text-white text-center font-extrabold text-4xl mix-blend-exclusion underline underline-offset-1">
+        <h4 className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-4xl text-white text-center font-extrabold  mix-blend-exclusion underline underline-offset-1 mt-4">
           ROOTCHOICE! Your choice here:)
         </h4>
         <div className="flex justify-center items-center pt-20">
           <Link href={"/tshirts"}>
-            <div class="relative cursor-pointer px-6 py-3 font-bold text-white rounded-lg group">
-              <span class="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-gray-900 rounded-xl ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
-              <span class="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-cyan-900 ease rounded-xl opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
-              <span class="relative font-serif">View Offers...</span>
+            <div className="relative cursor-pointer px-6 py-3 font-bold text-white rounded-lg group">
+              <span className="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-gray-900 rounded-xl ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+              <span className="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-cyan-900 ease rounded-xl opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>
+              <span className="relative font-serif">View Offers...</span>
             </div>
           </Link>
         </div>
@@ -46,9 +47,9 @@ export default function Home({ setSideCart }) {
     <>
       <Head>
         <title>ROOTCHOICE</title>
-
         <meta name="description" content="ROOTCHOICE.com wear the code" />
       </Head>
+      
       {/* <div className="text-center"> */}
       <ImageScrollBar images={images} fun={showHTML} />
       {/* </div> */}

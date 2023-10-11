@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const cors = require('micro-cors')();
 const nextConfig = {
   reactStrictMode: true,
   api: {
