@@ -25,29 +25,27 @@ export default function PagesSidebar({
   logout,
   toggleCart,
   sideCart,
+  handleCart,
 }) {
   const ref = useRef();
   useEffect(() => {
     ref && setPagessidebarRef(ref);
-  }, []);
+  });
 
   return (
     <>
       <aside>
         <div
           ref={ref}
-          className="fixed top-0 left-0 z-[100] h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-900"
+          className="fixed inset-0 top-0 left-0 z-[100] h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-[21rem] dark:bg-gray-900"
           tabIndex="-1"
         >
-          <h5
-            className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400"
-          >
+          <h5 className="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">
             Menu
           </h5>
           <button
             onClick={handlePagesSidebar}
             type="button"
-            
             className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white"
           >
             <svg
@@ -106,7 +104,7 @@ export default function PagesSidebar({
                   </svg>
                 </button>
                 <ul id="dropdown" className="hidden py-2 space-y-2 pl-5">
-                  <Link href={"/tshirts"}>
+                  <Link passHref href={"/tshirts"}>
                     <li className="pt-2">
                       <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         {/* <div className="flex justify-center"> */}
@@ -118,7 +116,7 @@ export default function PagesSidebar({
                       </div>
                     </li>
                   </Link>
-                  <Link href="/hoodies">
+                  <Link passHref href="/hoodies">
                     <li className="pt-2">
                       <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <PiHoodieBold />
@@ -128,7 +126,7 @@ export default function PagesSidebar({
                       </div>
                     </li>
                   </Link>
-                  <Link href="/mugs">
+                  <Link passHref href="/mugs">
                     <li className="pt-2">
                       <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <FaMugSaucer />
@@ -138,7 +136,7 @@ export default function PagesSidebar({
                       </div>
                     </li>
                   </Link>
-                  <Link href={"/tshirts"}>
+                  <Link passHref href={"/stickers"}>
                     <li className="pt-2">
                       <div
                         href="/stickers"
@@ -153,32 +151,28 @@ export default function PagesSidebar({
                   </Link>
                 </ul>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                >
-                  <FaRProject />
-                  <span className="flex-1 ml-3 whitespace-nowrap">VIP's</span>
-                  <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
-                    Pro
-                  </span>
-                </a>
-              </li>
-              <Link href={"/orders"}>
+              <Link passHref href="/proProduct">
                 <li>
-                  <a
-                    href="#"
-                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-                  >
+                  <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                    <FaRProject />
+                    <span className="flex-1 ml-3 whitespace-nowrap">VIP&apos;s</span>
+                    <span className="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                      Pro
+                    </span>
+                  </div>
+                </li>
+              </Link>
+              <Link passHref href={"/account"}>
+                <li>
+                  <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <FaCircleUser />
                     <span className="flex-1 ml-3 whitespace-nowrap">
                       Profile
                     </span>
-                  </a>
+                  </div>
                 </li>
               </Link>
-              <li >
+              <li onClick={handleCart}>
                 <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                   <ImCart className=" text-white" />
                   <span className="flex-1 ml-3 whitespace-nowrap">
@@ -187,7 +181,7 @@ export default function PagesSidebar({
                 </div>
               </li>
 
-              <Link href={"/orders"}>
+              <Link passHref href={"/orders"}>
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <BsFillBagCheckFill />
@@ -197,7 +191,7 @@ export default function PagesSidebar({
                   </div>
                 </li>
               </Link>
-              <Link href={"/login"}>
+              <Link passHref href={"/login"}>
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <FaSignInAlt />
@@ -207,7 +201,7 @@ export default function PagesSidebar({
                   </div>
                 </li>
               </Link>
-              <Link href={"/signup"}>
+              <Link passHref href={"/signup"}>
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <BsPenFill />
@@ -225,7 +219,7 @@ export default function PagesSidebar({
                 </div>
               </li>
 
-              <Link href={"/about"}>
+              <Link passHref href={"/about"}>
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <HiInformationCircle />
@@ -235,7 +229,7 @@ export default function PagesSidebar({
                   </div>
                 </li>
               </Link>
-              <Link href={"/contact"}>
+              <Link passHref href={"/contact"}>
                 <li>
                   <div className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <HiInformationCircle />

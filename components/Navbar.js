@@ -8,6 +8,7 @@ import { CiMenuFries } from "react-icons/ci";
 import { FaMinusCircle, FaPlusCircle, FaUserCircle } from "react-icons/fa";
 import PagesSidebar from "./PagesSidebar";
 import Cart from "./cart";
+import Image from "next/image";
 const Navbar = ({
   cart,
   clearCart,
@@ -49,7 +50,7 @@ const Navbar = ({
     } else {
       setCartIcon(true);
     }
-  }, [router.query]);
+  }, [router.query, router.pathname]);
 
   // Pages Sidebar togggle function
   const handlePagesSidebar = () => {
@@ -70,8 +71,8 @@ const Navbar = ({
       >
         <div className="md:w-full container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
           <a className="flex title-font font-medium items-center text-white ">
-            <img className="h-14 invert" src="/logo.png" alt="Logo" />
-            <Link href={"/"}>
+            <Image height={56} width={56} className="h-14 invert" src="/logo.png" alt="Logo" />
+            <Link passHref href={"/"}>
               <span className="text-xl cursor-pointer">ROOTCHOICE</span>
             </Link>
           </a>
@@ -155,7 +156,7 @@ const Navbar = ({
                 />
               </a>
             ) : (
-              <Link href={"/login"}>
+              <Link passHref href={"/login"}>
                 <button className="hidden lg:flex ml-auto mr-3 bg-transparent text-xl font-extrabold underline  hover:text-white border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">
                   Login
                 </button>
@@ -207,6 +208,7 @@ const Navbar = ({
       <PagesSidebar
         handlePagesSidebar={handlePagesSidebar}
         setPagessidebarRef={setPagessidebarRef}
+        handleCart={handleCart}
       />
 
       <Cart handleCart={handleCart} setCartRef={setCartRef} />

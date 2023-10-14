@@ -1,4 +1,4 @@
-// import React from "react";
+// eslint-disable-next-line react-hooks/exhaustive-deps
 import Head from "next/head";
 import Script from "next/script";
 import { useState, useEffect } from "react";
@@ -96,7 +96,7 @@ const Account = ({ setSideCart }) => {
   };
 
   useEffect(() => {
-    setSideCart(false);
+    setSideCart(false);d
 
     let token = localStorage.getItem("token");
     if (!token) {
@@ -106,7 +106,8 @@ const Account = ({ setSideCart }) => {
       setEmail(user.email);
       userDetails();
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   const userDetails = async () => {
     let token = localStorage.getItem("token");

@@ -3,7 +3,6 @@ import FeatherIcon from "feather-icons-react";
 import { AppBar, Box, IconButton, Toolbar } from "@mui/material";
 import PropTypes from "prop-types";
 // Dropdown Component
-import SearchDD from "./SearchDD";
 import ProfileDD from "./ProfileDD";
 
 const Header = ({ sx, customClass, toggleMobileSidebar, position }) => {
@@ -24,12 +23,7 @@ const Header = ({ sx, customClass, toggleMobileSidebar, position }) => {
         >
           <FeatherIcon icon="menu" width="20" height="20" />
         </IconButton>
-        {/* ------------------------------------------- */}
-        {/* Search Dropdown */}
-        {/* ------------------------------------------- */}
-        <SearchDD />
-        {/* ------------ End Menu icon ------------- */}
-
+    
         <Box flexGrow={1} />
 
         <ProfileDD />

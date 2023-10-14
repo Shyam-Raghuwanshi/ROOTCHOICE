@@ -4,11 +4,10 @@ import Product from "../models/Product";
 import connectDb from "../middleware/mongoose";
 import Head from "next/head";
 
-const Tshirts = ({ tshirts, setSideCart }) => {
+const ProProducts = ({ tshirts, setSideCart }) => {
   useEffect(() => {
     setSideCart(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
   return (
     <>
       <Head>
@@ -27,19 +26,18 @@ const Tshirts = ({ tshirts, setSideCart }) => {
             ) : (
               Object.keys(tshirts).map((item) => {
                 return (
-                  <Link
-                    passHref
+                  <Link passHref
                     key={tshirts[item]._id}
                     href={`/products/${tshirts[item].slug}`}
                   >
                     <div className="lg:w-1/4 md:w-1/2 xl:ml-24 lg:ml-24 md:ml-52 mt-11 w-full cursor-pointer">
-                      <span className="rounded">
+                      <a className="rounded">
                         <img
                           alt="ecommerce"
                           className="rounded-md"
                           src={tshirts[item].img}
                         />
-                      </span>
+                      </a>
                       <div className="mt-4 flex justify-end text-center flex-col">
                         <h3 className="text-xs tracking-widest title-font mb-1">
                           {tshirts[item].title}
@@ -144,4 +142,4 @@ export async function getServerSideProps(context) {
     props: { tshirts: JSON.parse(JSON.stringify(tshirts)) },
   };
 }
-export default Tshirts;
+export default ProProducts;

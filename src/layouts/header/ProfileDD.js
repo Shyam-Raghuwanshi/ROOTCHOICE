@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import FeatherIcon from "feather-icons-react";
 import Image from "next/image";
-import userimg from "../../../assets/images/users/user2.jpg";
-import jsonwebtoken from 'jsonwebtoken'
-import { useRouter } from 'next/router'
+import jsonwebtoken from "jsonwebtoken";
+import { useRouter } from "next/router";
 import {
   Box,
   Menu,
@@ -16,46 +15,51 @@ import {
   Divider,
 } from "@mui/material";
 const ProfileDD = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [anchorEl4, setAnchorEl4] = React.useState(null);
-  const [username, setUsername] = React.useState('')
+  const [username, setUsername] = React.useState("");
   const handleClick4 = (event) => {
     setAnchorEl4(event.currentTarget);
   };
   useEffect(() => {
-    setName()
-  }, [])
+    setName();
+  }, [router.query, setName]);
 
   const setName = () => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
     if (token) {
-      try{
-      const userNameFromToken = jsonwebtoken.verify(token, process.env.NEXT_PUBLIC_SECRET_KEY)
-      setUsername(userNameFromToken.name)
-      }
-      catch{
-        router.push("/")
+      try {
+        const userNameFromToken = jsonwebtoken.verify(
+          token,
+          process.env.NEXT_PUBLIC_SECRET_KEY
+        );
+        userNameFromToken && setUsername(userNameFromToken.email);
+      } catch {
+        router.push("/");
       }
     }
-  }
+  };
 
   const handleClose4 = () => {
     setAnchorEl4(null);
   };
 
   const handleLogout = async () => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
     if (token) {
-      const userEmailFromToken = jsonwebtoken.verify(token, process.env.NEXT_PUBLIC_SECRET_KEY)
-      const body = { email: userEmailFromToken.email, mode: false }
+      const userEmailFromToken = jsonwebtoken.verify(
+        token,
+        process.env.NEXT_PUBLIC_SECRET_KEY
+      );
+      const body = { email: userEmailFromToken.email, mode: false };
       await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/updateSellerMode`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      })
-      router.push('/')
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      router.push("/");
     }
-  }
+  };
 
   return (
     <>
@@ -67,17 +71,11 @@ const ProfileDD = () => {
         onClick={handleClick4}
       >
         <Box display="flex" alignItems="center">
-          <Image
-            src={userimg}
-            alt={userimg}
-            width="30"
-            height="30"
-            className="roundedCircle"
-          />
+         
           <Box
             sx={{
               display: {
-                xs: "none",
+                xs: "flex",
                 sm: "flex",
               },
               alignItems: "center",
@@ -89,7 +87,6 @@ const ProfileDD = () => {
               fontWeight="400"
               sx={{ ml: 1 }}
             >
-              Hi,
             </Typography>
             <Typography
               variant="h5"
@@ -98,7 +95,7 @@ const ProfileDD = () => {
                 ml: 1,
               }}
             >
-              {username}
+              <div className="border-2 border-blue-500 bg-slate-600 text-white rounded-full p-[4px] font-thin h-8 w-8 flex items-center justify-center" >{username?.slice(0, 2).toUpperCase()}</div>
             </Typography>
             <FeatherIcon icon="chevron-down" width="20" height="20" />
           </Box>
@@ -117,27 +114,16 @@ const ProfileDD = () => {
         }}
       >
         <Box>
-          <Box p={2} pt={0}>
-            <List
-              component="nav"
-              aria-label="secondary mailbox folder"
-              onClick={handleClose4}
-            >
-              <ListItemButton>
-                <ListItemText primary="Edit Profile" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemText primary="Account" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemText primary="Change Password" />
-              </ListItemButton>
-            </List>
-          </Box>
+          
           <Divider />
           <Box p={2}>
             <Link to="/">
-              <div onClick={handleLogout} className="font-extrabold cursor-pointer text-center" variant="contained" color="primary">
+              <div
+                onClick={handleLogout}
+                className="font-extrabold cursor-pointer text-center"
+                variant="contained"
+                color="primary"
+              >
                 Logout from Admin
               </div>
             </Link>

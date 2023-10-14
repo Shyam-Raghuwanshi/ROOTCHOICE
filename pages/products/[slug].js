@@ -8,6 +8,7 @@ import jsonwebtoken from 'jsonwebtoken'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Error from 'next/error'
+import Image from 'next/image'
 const Slug = ({ addToCart, product, varients, error }) => {
   const router = useRouter()
   const { slug } = router.query;
@@ -29,7 +30,7 @@ const Slug = ({ addToCart, product, varients, error }) => {
       setColor(product.color)
       setSize(product.size)
     }
-  }, [router.query])
+  }, [router.query, error, product.color, product.size])
 
   const handelPinCode = async () => {
     const pinCodes = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/pincode`)
@@ -70,7 +71,8 @@ const Slug = ({ addToCart, product, varients, error }) => {
     <section className="text-gray-300 bg-gray-900 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <img alt="ecommerce" className="rounded xl:h-96 mt-8" src={product.img} />
+          {/* <img alt="ecommerce" className="rounded xl:h-96 mt-8" src={product.img} /> */}
+          <Image alt="ecommerce" height={384} width={384} className="rounded xl:h-96 mt-8" src={product.img} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">ROOTCHOICE</h2>
             <h1 className=" text-3xl title-font font-medium mb-1">{product.title} ({product.size}/{product.color})</h1>
@@ -119,10 +121,10 @@ const Slug = ({ addToCart, product, varients, error }) => {
               {product.availableQty != '0' && <span className="title-font font-medium text-2xl">₹ {product.price}</span>}
               {product.availableQty == '0' && <span className="title-font text-red-400 ">Sorry!, Item is outofstock.</span>}
               <div className='flex'>
-                {email == null ? <Link href={`http://localhost:3000/login`}><button onClick={() => { loginRequired("Please login or signup for buynow") }} disabled={product.availableQty <= 0} className="flex ml-auto text-white bg-gray-700 border-0 py-2 px-3 disabled:bg-slate-500 focus:outline-none active:bg-gray-600 rounded">Buy Now</button></Link> :
-                  <Link href={`http://localhost:3000/buynow?slug=${slug}&q=${1}`}><button disabled={product.availableQty <= 0} className="flex ml-auto text-white bg-gray-700 border-0 py-2 px-3 disabled:bg-slate-500 focus:outline-none active:bg-gray-600 rounded">Buy Now</button></Link>}
+                {email == null ? <Link passHref href={`http://localhost:3000/login`}><button onClick={() => { loginRequired("Please login or signup for buynow") }} disabled={product.availableQty <= 0} className="flex ml-auto text-white bg-gray-700 border-0 py-2 px-3 disabled:bg-slate-500 focus:outline-none active:bg-gray-600 rounded">Buy Now</button></Link> :
+                  <Link passHref href={`http://localhost:3000/buynow?slug=${slug}&q=${1}`}><button disabled={product.availableQty <= 0} className="flex ml-auto text-white bg-gray-700 border-0 py-2 px-3 disabled:bg-slate-500 focus:outline-none active:bg-gray-600 rounded">Buy Now</button></Link>}
 
-                {email == null ? <Link href={'http://localhost:3000/login'}><button onClick={() => { loginRequired("Please login or signup for build your cart") }} disabled={product.availableQty <= 0} className="ml-2 flex text-white disabled:bg-slate-500 bg-gray-700 border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">Add to Cart</button></Link>
+                {email == null ? <Link passHref href={'http://localhost:3000/login'}><button onClick={() => { loginRequired("Please login or signup for build your cart") }} disabled={product.availableQty <= 0} className="ml-2 flex text-white disabled:bg-slate-500 bg-gray-700 border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">Add to Cart</button></Link>
                   : <button onClick={() => { addToCart(email, slug, 1, product.price, product.title, size, color, product.img) }} disabled={product.availableQty <= 0} className="ml-2 disabled:bg-slate-500 flex text-white bg-gray-700 border-0 py-2 px-3 focus:outline-none active:bg-gray-600 rounded">Add to Cart</button>}
               </div>
             </div>

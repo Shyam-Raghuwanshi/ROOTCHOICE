@@ -13,7 +13,7 @@ const Signup = ({ setSideCart }) => {
   const [mode, setMode] = useState(false)
   useEffect(() => {
     setSideCart(false)
-  }, [])
+  })
   const onSubmit = async (e) => {
     e.preventDefault()
     let body = { name, email, password, mode }
@@ -114,7 +114,7 @@ const Signup = ({ setSideCart }) => {
               />
 
             </div>
-            <Link href={'/login'}><span className='mt-5 cursor-pointer hover:underline'>Already! you have account.</span></Link>
+            <Link passHref href={'/login'}><span className='mt-5 cursor-pointer hover:underline'>Already! you have account.</span></Link>
             <button type="submit" className="bg-gray-900 py-4 text-center px-17 md:px-12 md:py-4 border border-gray-200 text-gray-200 rounded leading-tight text-xl md:text-base font-sans mt-4 mb-20 cursor-pointer active:bg-gray-800">SignUp</button>
           </form>
         </div>

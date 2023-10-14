@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from 'next/link'
+import Image from "next/image";
 import {
   Typography,
   Table,
@@ -94,13 +95,13 @@ const ProductPerfomance = ({ products, setProducts, setKey }) => {
             <TableRow>
               <TableCell >
                 <Typography color="textSecondary" variant="h6">
-                  <img style={{ "height": "3rem" }} src={product.img} />
+                  <Image alt="image" height={'3rem'} width={'3rem'} src={product.img} />
                 </Typography>
               </TableCell>
 
 
               <TableCell>
-                <Link href={`${process.env.NEXT_PUBLIC_HOST}/admin/product/${product.slug}`}><Typography className="cursor-pointer hover:underline" onClick={handleProduct} color="textSecondary" variant="h6">
+                <Link passHref href={`${process.env.NEXT_PUBLIC_HOST}/admin/product/${product.slug}`}><Typography className="cursor-pointer hover:underline" onClick={handleProduct} color="textSecondary" variant="h6">
                   {product.title}
                 </Typography></Link>
               </TableCell>

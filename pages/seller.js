@@ -25,7 +25,7 @@ function Seller() {
         else{
             router.push('/login')
         }
-    }, [])
+    })
 
     const fetchSellerDetails = async () =>{
         let token = localStorage.getItem('token')
@@ -173,7 +173,7 @@ function Seller() {
                     </div>
                     <div className='flex justify-between'>
                         <button onClick={saveSellerDetails} disabled={disable} className="text-white w-[45%] bg-indigo-500 border-0 py-2 px-8 focus:outline-none disabled:bg-indigo-200 hover:bg-indigo-600 rounded text-lg">Continue</button>
-                        {user == null ? <div></div> : <Link href={'/account'}><button className="text-white w-[45%] bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Change Details</button></Link>}
+                        {user == null ? <div></div> : <Link passHref href={'/account'}><button className="text-white w-[45%] bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Change Details</button></Link>}
                     </div>
                 </div>
             </div>

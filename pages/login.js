@@ -11,7 +11,7 @@ const Login = ({ setSideCart }) => {
   const [password, setPassword] = useState('')
   useEffect(() => {
     setSideCart(false)
-  }, [])
+  })
   const onSubmit = async (e) => {
     e.preventDefault()
     let body = { email, password }
@@ -116,8 +116,8 @@ const Login = ({ setSideCart }) => {
              
             </div>
             <div className='flex justify-between'>
-              <Link href={'/forgot'}><span className=" cursor-pointer  text-white  font-roboto\ hover:underline mb-6">Forget Password ?</span></Link>
-              <Link href={'/signup'}><span className="text-base cursor-pointer text-white  font-roboto leading-normal hover:underline mb-6">Create account</span></Link>
+              <Link passHref href={'/forgot'}><span className=" cursor-pointer  text-white  font-roboto\ hover:underline mb-6">Forget Password ?</span></Link>
+              <Link passHref href={'/signup'}><span className="text-base cursor-pointer text-white  font-roboto leading-normal hover:underline mb-6">Create account</span></Link>
             </div>
             <button className="cursor-pointer bg-gray-900 active:bg-gray-800 border border-gray-400 py-4 text-center px-17 md:px-12 md:py-4 text-white rounded leading-tight text-xl md:text-base font-sans mt-4 mb-20">Login</button>
           </form>

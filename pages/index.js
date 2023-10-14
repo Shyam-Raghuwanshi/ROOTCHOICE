@@ -4,13 +4,12 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import ImageScrollBar from "../components/ImageScrollbar";
-import PagesSidebar from "../components/PagesSidebar";
 
 export default function Home({ setSideCart }) {
   const router = useRouter();
   useEffect(() => {
     setSideCart(false);
-  }, [router.query]);
+  }, [router.query, setSideCart]);
 
   const images = [
     "./static/images/backgrounds/1.jpg",
@@ -32,7 +31,7 @@ export default function Home({ setSideCart }) {
           ROOTCHOICE! Your choice here:)
         </h4>
         <div className="flex justify-center items-center pt-20">
-          <Link href={"/tshirts"}>
+          <Link passHref href={"/tshirts"}>
             <div className="relative cursor-pointer px-6 py-3 font-bold text-white rounded-lg group">
               <span className="absolute inset-0 w-full h-full transition duration-300 transform -translate-x-1 -translate-y-1 bg-gray-900 rounded-xl ease opacity-80 group-hover:translate-x-0 group-hover:translate-y-0"></span>
               <span className="absolute inset-0 w-full h-full transition duration-300 transform translate-x-1 translate-y-1 bg-cyan-900 ease rounded-xl opacity-80 group-hover:translate-x-0 group-hover:translate-y-0 mix-blend-screen"></span>

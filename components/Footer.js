@@ -1,13 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 const Footer = () => {
     return (
         <div><footer className="bg-gray-900 body-font border-t-2 border-slate-700">
             <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                 <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
                     <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                        <img className='h-20 invert' src="/logo.png" alt="Logo" />
-                        <Link href={'/'}><span className="text-xl font-bold text-gray-400 cursor-pointer">ROOTCHOICE</span></Link>
+                        <Image height={50} width={60} className='invert' src="/logo.png" alt="Logo" />
+                        <Link passHref href={'/'}><span className="text-xl font-bold text-gray-400 cursor-pointer">ROOTCHOICE</span></Link>
                     </a>
                     <p className=" ml-9 text-sm text-gray-400">ROOTCHOICE your choice here.</p>
                 </div>
@@ -89,7 +90,7 @@ const Footer = () => {
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
                  
-                    <a href="https://twitter.com/ShyamRa36109329" target="_blank" className="ml-3 cursor-pointer text-gray-200">
+                    <Link passHref rel="noreferrer" href={"https://twitter.com/ShyamRa36109329"} target="_blank" className="ml-3 cursor-pointer text-gray-200">
                       <svg
                         fill="currentColor"
                         strokeLinecap="round"
@@ -100,8 +101,8 @@ const Footer = () => {
                       >
                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                       </svg>
-                    </a>
-                    <a  href="http://instagram.com/shyam_raghuonec" target="_blank"  className="ml-3 cursor-pointer text-gray-200">
+                    </Link>
+                    <Link passHref rel="noreferrer" href={"http://instagram.com/shyam_raghuonec"} target="_blank"  className="ml-3 cursor-pointer text-gray-200">
                       <svg
                         fill="none"
                         stroke="currentColor"
@@ -121,8 +122,8 @@ const Footer = () => {
                         ></rect>
                         <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                       </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/shyam-raghuwanshi-b67489220/" target="_blank" className="ml-3 cursor-pointer text-gray-200">
+                    </Link>
+                    <Link passHref href={"https://www.linkedin.com/in/shyam-raghuwanshi-b67489220/"} target="_blank" rel="noreferrer" className="ml-3 cursor-pointer text-gray-200">
                       <svg
                         fill="currentColor"
                         stroke="currentColor"
@@ -138,7 +139,7 @@ const Footer = () => {
                         ></path>
                         <circle cx="4" cy="4" r="2" stroke="none"></circle>
                       </svg>
-                    </a>
+                    </Link>
                   </span>
                 </div>
             </div>

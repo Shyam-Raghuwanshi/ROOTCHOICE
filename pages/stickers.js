@@ -6,7 +6,7 @@ import Head from 'next/head'
 const Stickers = ({ stickers , setSideCart}) => {
   useEffect(() => {
     setSideCart(false)
-  }, [])
+  })
   return (
     <>
        <Head>
@@ -19,11 +19,11 @@ const Stickers = ({ stickers , setSideCart}) => {
           <div className="flex flex-wrap -m-5 justify-center">
             {Object.keys(stickers).map((item) => {
               return (
-                <Link key={stickers[item]._id} href={`/products/${stickers[item].slug}`}>
+                <Link passHref key={stickers[item]._id} href={`/products/${stickers[item].slug}`}>
                   <div className="lg:w-1/4 md:w-1/2 xl:ml-24 lg:ml-24 md:ml-52 mt-11 w-full cursor-pointer">
-                    <a className="rounded">
+                    <span className="rounded">
                       <img alt="ecommerce" className="rounded-md" src={stickers[item].img} />
-                    </a>
+                    </span>
                     <div className="mt-4 flex justify-end text-center flex-col">
                       <h3 className="text-xs tracking-widest title-font mb-1">{stickers[item].title}</h3>
                       <hr className='mb-2' />
@@ -86,7 +86,7 @@ export async function getServerSideProps(context) {
     props: { stickers: JSON.parse(JSON.stringify(stickers)) }
   }
 }
-export default stickers;
+export default Stickers;
 
 
 

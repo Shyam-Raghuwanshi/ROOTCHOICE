@@ -2,7 +2,6 @@ import User from "../../models/User";
 import connectDb from "../../middleware/mongoose";
 var CryptoJS = require("crypto-js");
 var jwt = require("jsonwebtoken");
-import "micro-cors";
 connectDb();
 async function handler(req, res) {
   let user;
@@ -40,4 +39,4 @@ async function handler(req, res) {
   }
 }
 
-export default cors(handler);
+export default handler;

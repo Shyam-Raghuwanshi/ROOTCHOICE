@@ -16,20 +16,17 @@ export default function Cart({
   const ref = useRef();
   useEffect(() => {
     ref && setCartRef(ref);
-  }, []);
+  });
 
   return (
     <>
       <aside>
         <div
           ref={ref}
-          className="fixed top-0 right-0 z-[100] h-screen p-4 overflow-x-auto overflow-x-hidden transition-transform translate-x-full bg-white w-96 dark:bg-gray-900"
+          className="fixed top-0 right-0 z-[100] h-screen p-4 overflow-x-hidden transition-transform translate-x-full bg-white w-[22.4rem] dark:bg-gray-900"
           tabIndex="-1"
         >
-          <h5
-            
-            className="text-base font-semibold text-gray-500 dark:text-gray-400"
-          >
+          <h5 className="text-base font-semibold text-gray-500 dark:text-gray-400">
             Your Cart
           </h5>
           <button
@@ -127,7 +124,7 @@ export default function Cart({
                     Checkout
                   </button>
                 ) : (
-                  <Link href={"/checkout"}>
+                  <Link passHref href={"/checkout"}>
                     <button className=" flex mr-2 text-white bg-slate-600 border-2 border-slate-400  py-2 px-2 active:bg-slate-700  rounded-lg text-lg">
                       <BsBagPlusFill className="mr-2 mt-1" />
                       Checkout

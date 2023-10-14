@@ -14,37 +14,34 @@ const theme = createTheme({
     },
     secondary: {
       main: "#fb9678",
-      light: "#fcf1ed",
+      light: "rgba(73,82,88,0.12)",
       dark: "#e67e5f",
       contrastText: "#ffffff",
     },
     success: {
       main: "#00c292",
-
       dark: "#00964b",
       contrastText: "#ffffff",
     },
     danger: {
       main: "#e46a76",
-      light: "#fdf3f5",
+      light: "rgba(73,82,88,0.12)",
     },
     info: {
       main: "#0bb2fb",
-      light: "#a7e3f4",
+      light: "rgba(73,82,88,0.12)",
     },
     error: {
       main: "#e46a76",
-
       dark: "#e45a68",
     },
     warning: {
       main: "#fec90f",
-
       dark: "#dcb014",
       contrastText: "#ffffff",
     },
     text: {
-      secondary: "#777e89",
+      secondary: "#777e89", // Text color
       danger: "#fc4b6c",
     },
     grey: {
@@ -62,6 +59,7 @@ const theme = createTheme({
       default: "#fafbfb",
     },
   },
+  
   mixins: {
     toolbar: {
       color: "#949db2",

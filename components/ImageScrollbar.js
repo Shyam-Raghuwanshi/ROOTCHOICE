@@ -15,7 +15,7 @@ const ImageScrollBar = ({ images, fun }) => {
             clearInterval(interval);
         };
 
-    }, [currentImageIndex])
+    }, [currentImageIndex, imageArrLength])
     return (
         <>
             <div className="bg-cover bg-center bg-no-repeat h-screen transition-all ease-in-out-quart duration-900" style={{ backgroundImage: `url('${images[currentImageIndex]}')` }}>

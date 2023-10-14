@@ -14,7 +14,7 @@ const Myorder = ({ order, setSideCart }) => {
       router.push('/')
     }
 
-  }, [])
+  })
 
 
   return (

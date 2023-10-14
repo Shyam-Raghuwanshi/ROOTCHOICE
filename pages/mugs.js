@@ -1,3 +1,4 @@
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 import Link from 'next/link'
 import React, {useEffect} from 'react'
 import Product from '../models/Product'
@@ -6,7 +7,7 @@ import Head from 'next/head';
 const Mugs = ({ mugs, setSideCart}) => {
   useEffect(() => {
     setSideCart(false)
-  }, [])
+  })
   return (
     <>
     <Head>
@@ -19,7 +20,7 @@ const Mugs = ({ mugs, setSideCart}) => {
           <div className="flex flex-wrap -m-5 justify-center">
             {Object.keys(mugs).map((item) => {
               return (
-                <Link key={mugs[item]._id} href={`/products/${mugs[item].slug}`}>
+                <Link passHref key={mugs[item]._id} href={`/products/${mugs[item].slug}`}>
                   <div className="lg:w-1/4 md:w-1/2 xl:ml-24 lg:ml-24 md:ml-52 mt-11 w-full cursor-pointer">
                     <a className="rounded">
                       <img alt="ecommerce" className="rounded-md" src={mugs[item].img} />
