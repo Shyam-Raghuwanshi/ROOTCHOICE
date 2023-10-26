@@ -1,5 +1,11 @@
-## This is a Ecommerce website Name as RootChoice- 
-where we can buy and sell products like flipkar and Amazon
+## RootChoice- A Ecommerce Website
+“ROOTCHOICE is a Ecommerce platform for buying and selling a
+variety of items. User-friendly and reliable, our ecommerce
+website offers diverse choices for all your shopping and selling
+desires.”
+
+### Preview
+https://www.loom.com/share/a04d3f0374cf4af38fb7ca1b58bae6b5?sid=fa8a0411-a613-431b-9eee-866bd3bc8ff5
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
